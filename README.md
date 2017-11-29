@@ -62,7 +62,7 @@
         * AppContainer should mapDispatchToProps for loadThings.
 
 ## Server - use advanced-express-practice as an example
-* The code for this goes in /src
+* The code for this goes in the /server folder
 * Use express to create a server listening on port 3001
 * Use mongoose to connect to a MongoDB database called “checkpoint2”
 * Create a Model for your thing
