@@ -1,5 +1,5 @@
 ### Setup
-* yarn install, yarn start
+* npm install, npm start
 * Don’t use this readme to figure out what code to type
 * Use all other projects we have done as code examples
 * Pick a real life thing to use as a model. Vehicle, Product, Movie …etc
