@@ -1,22 +1,73 @@
-import React, { Component } from "react";
-import "./App.css";
-import {Button} from "react-bootstrap";
+import React from "react";
+import TopNav from "./components/TopNav";
+import PropTypes from "prop-types";
+import AreaChart from "./components/AreaChart";
+import Comments from "./components/Comments";
+import DonutChart from "./components/DonutChart";
+import Orders from "./components/Orders";
+import SideNav from "./components/SideNav";
+import Tasks from "./components/Tasks";
+import TasksPanel from "./components/TasksPanel";
+import Tickets from "./components/Tickets";
+import TransactionsPanel from "./components/TransactionsPanel";
 
-class App extends Component {
-  constructor() {
-    super();
-  }
-  componentDidMount() {
-  }
-  render() {
-    return (
-      <div>
-        Client
-        <Button />
+
+function App() {
+  return (
+    <div> 
+      <div id="wrapper">
+        <nav className="navbar navbar-inverse navbar-fixed-top" role="navigation">
+          <TopNav />
+          <SideNav />
+        </nav>
+        <div id="page-wrapper">
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col-lg-12">
+                <h1 className="page-header">
+                    Dashboard <small>Statistics Overview</small>
+                </h1>
+                <ol className="breadcrumb">
+                  <li className="active">
+                    <i className="fa fa-dashboard" /> Dashboard
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <div className="row">
+              <Comments />
+              <Tasks />
+              <Orders />
+              <Tickets />
+            </div>
+            <AreaChart />
+            <div className="row">
+              <DonutChart />
+              <div className="col-lg-4">
+                <TasksPanel />
+              </div>
+              <div className="col-lg-4">
+                <TransactionsPanel />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    );
-  }
+    </div>
+
+  );
 }
-export default (App);
 
+App.propTypes = {
+  dateTime: PropTypes.string.isRequired,
+  newTasks: PropTypes.number.isRequired,
+  tickets: PropTypes.number.isRequired,
+  orders: PropTypes.array.isRequired,
+  taskItem: PropTypes.string.isRequired, 
+  newOrders: PropTypes.number.isRequired,
+  newComments: PropTypes.number.isRequired,
+  messages: PropTypes.array,
+  tasks: PropTypes.array  
+};
 
+export default App;
